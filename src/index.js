@@ -49,10 +49,12 @@ const recipes = [
     description: "5-Minutes Recipe",
   },
 ];
-for (let recipe in recipes) {
-  let objDetails = getFoodDetails(recipe);
-  ulEl.appendChild(objDetails);
-}
+
+let objDetails = getFoodDetails(recipes[1]);
+ulEl.appendChild(objDetails);
+
+// for (let recipe in recipes) {
+// }
 
 const appEl = document.querySelector("#app");
 appEl.appendChild(ulEl);
