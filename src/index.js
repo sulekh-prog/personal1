@@ -17,11 +17,12 @@ const ulEl = document.createElement("ul");
 // console.log(ulEl);
 
 // console.log(document.querySelector("#app"));
-const getFoodDetails = (image, name, description) => {
+const getFoodDetails = ({ image, name, description }) => {
   const liEl = document.createElement("li");
 
   const imgEl = document.createElement("img");
-  imgEl.setAttribute("src", image[0]);
+  imgEl.setAttribute("src", image);
+  console.log(image);
   liEl.appendChild(imgEl);
 
   const h2El = document.createElement("h2");
@@ -36,13 +37,30 @@ const getFoodDetails = (image, name, description) => {
   // liEl.appendChild(ulEL) OVER HERE APPENDING WHEN PASSING THE ARGUMENTS//
 };
 
+const recipes = [
+  {
+    image: "images/apple-pie.jpg",
+    name: "Easy Food Recipe",
+    description: "All about healthy food",
+  },
+  {
+    image: "images/breakfast.jpg",
+    name: "Easy Breakfast",
+    description: "5-Minutes Recipe",
+  },
+];
+for (let recipe in recipes) {
+  let objDetails = getFoodDetails(recipe);
+  ulEl.appendChild(objDetails);
+}
+
 const appEl = document.querySelector("#app");
 appEl.appendChild(ulEl);
 
 //using two images , name and description from the folder src/images/apple-pie .jpg & breakfast.jpg
 
 // const appleEl = getFoodDetails(
-//   "images/apple-pie .jpg",
+//   "images/apple-pie.jpg",
 //   "Easy Food Recipe",
 //   "All about healthy food"
 // );
@@ -58,24 +76,25 @@ appEl.appendChild(ulEl);
 // now creating a data structure for image,name, description using array of objects:
 // const FoodEl = getFoodDetails();
 
-const recipes = [
-  {
-    image: "src/images/apple-pie .jpg",
-    name: "Easy Food Recipe",
-    description: "All about healthy food",
-  },
-  {
-    image: "images/breakfast.jpg",
-    name: "Easy Breakfast",
-    description: "5-Minutes Recipe",
-  },
-];
+// const img = recipes.img;
+// const name = recipes.name;
+// const description = recipes.description;
+// or; //object destructing--------
 
-for (const recipe in recipes) {
-  ulEl.appendChild(getFoodDetails(recipes[recipe[0]]));
-  //   console.log(ulEl);
-  console.log(recipes[recipe[0]]);
-}
+// for (let recipe in recipes) {
+//   console.log(recipe);
+//   console.log(recipes[recipe]);
+
+//   ulEl.appendChild(getFoodDetails(recipes[recipe]));
+//   console.log(ulEl);
+// }
+
+// const getPictures = (recipes) => {
+//   const { image, name, description } = recipes;
+//   // const image = recipes.image;
+//   // const name = recipes.name;
+//   // const description = recipes.description;
+// };
 
 // for (let i = 0; i < recipes.length; i++) {
 //   //   console.log(i);
