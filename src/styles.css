@@ -8,12 +8,13 @@ body {
   background-color: rgb(245, 219, 219);
 }
 .container {
-  max-width: 50rem;
+  max-width: 48rem;
   border: 1px solid black;
   background-color: rgb(230, 152, 28);
 }
 .home-menu a {
   float: left;
+  border: 1px solid white;
   padding: 12px;
   color: white;
   text-decoration: none;
@@ -27,16 +28,15 @@ body {
   background-color: #04aa6d;
 }
 .border {
-  width: 25px;
-  margin: 0.5rem;
-  border: 1px solid black;
+  width: 50%;
+  margin: 0.5rem 2rem;
+  border: 1px solid green;
 }
-.left-menu {
-  background-color: lightgrey;
+#menu {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2fr;
   grid-area: line;
-  margin-left: 0;
-  justify-content: center;
-  align-items: center;
 }
 .nav {
   padding: 0.5rem;
@@ -44,7 +44,7 @@ body {
   align-items: center;
   display: grid;
   grid-gap: 0.5rem;
-  grid-template-columns: 0.2fr 5fr;
+  grid-template-columns: 2fr 5fr;
   grid-template-areas: "line  menu";
   border: 1px solid red;
 }
@@ -58,10 +58,78 @@ body {
   align-items: center;
   border: 1px solid green;*/
 }
+.footer {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #a6a3a0;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
+h3,
+p {
+  text-align: center;
+}
+.footer-link {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+a {
+  color: blue;
+  justify-content: center;
+  align-items: center;
+  margin: 0.75rem;
+}
+#app {
+  border: 1px solid green;
+  text-align: center;
+  max-width: 48rem;
+  margin: 1rem;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 30%;
+}
+h2,
+p {
+  margin: 0.5rem;
+  padding: 1rem;
+}
 
-@media screen and (max-width: 32rem;) {
+.menu-ctn li {
+  position: relative;
+  width: 100%;
+  display: inline-block;
+  background-color: #555;
+  padding: 1rem 2rem;
+  transition: all 0.8s ease;
+}
+
+.menu-ctn li:hover {
+  cursor: pointer;
+  background-color: #000;
+  border: 1px solid white;
+}
+#dropdown {
+  display: none;
+  color: white;
+  width: 31%;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+  left: 0;
+  top: 12%;
+}
+#dropdown.active {
+  display: block;
+}
+
+@media screen and (min-width: 47rem) {
   .navbar a {
     float: none;
     display: block;
   }
 }
+
+@media screen and (min-width: 68rem;);
