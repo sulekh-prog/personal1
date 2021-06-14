@@ -34,9 +34,9 @@ const getFoodDetails = ({ image, name, description }) => {
   liEl.appendChild(pEl);
 
   return liEl;
-  // liEl.appendChild(ulEL) OVER HERE APPENDING WHEN PASSING THE ARGUMENTS//
+  // liEl.appendChild(ulEL); //OVER HERE APPENDING WHEN PASSING THE ARGUMENTS//
 };
-
+// liEl.appendChild(ulEl);
 const recipes = [
   {
     image: "images/apple-pie.jpg",
@@ -48,13 +48,17 @@ const recipes = [
     name: "Easy Breakfast",
     description: "5-Minutes Recipe",
   },
+  {
+    image: "images/indian-mutton.jpg",
+    name: "Traditional Recipe",
+    description: "very delicious and succlent",
+  },
 ];
 
-let objDetails = getFoodDetails(recipes[1]);
-ulEl.appendChild(objDetails);
-
-// for (let recipe in recipes) {
-// }
+for (let recipe of recipes) {
+  let objDetails = getFoodDetails(recipe);
+  ulEl.appendChild(objDetails);
+}
 
 const appEl = document.querySelector("#app");
 appEl.appendChild(ulEl);
@@ -112,3 +116,31 @@ const dropMenu = () => {
 };
 
 document.querySelector("#menu").addEventListener("click", dropMenu);
+
+//-----search ------//
+const searchButton = () => {
+  // alert("love coding");
+  window.location.href = "https://google.co.nz";
+};
+document.querySelector("#search").addEventListener("click", searchButton);
+
+//random images body---------//
+const picArr = [
+  "images/apple-pie.jpg",
+  "images/chicken.jpg",
+  "images/indian-mutton.jpg",
+  "images/lamb-chop.jpg",
+  "images/salmon.jpg",
+  "images/chicken-wings.jpg",
+];
+console.log(picArr);
+let chiPic = [];
+
+for (let i = 0; i < picArr.length; i++) {
+  if (picArr[i] === "images/chicken.jpg") {
+    chiPic.push(picArr[i]);
+    console.log(chiPic);
+  }
+}
+
+// document.querySelector("#backPic").addEventListener("click", backImage);
