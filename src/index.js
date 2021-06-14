@@ -126,21 +126,31 @@ document.querySelector("#search").addEventListener("click", searchButton);
 
 //random images body---------//
 const picArr = [
-  "images/apple-pie.jpg",
-  "images/chicken.jpg",
-  "images/indian-mutton.jpg",
-  "images/lamb-chop.jpg",
-  "images/salmon.jpg",
-  "images/chicken-wings.jpg",
+  { image: "images/apple-pie.jpg", category: "drink" },
+  { image: "images/chicken.jpg", category: "chicken" },
+  { image: "images/indian-mutton.jpg", category: "lamb" },
+  { image: "images/lamb-chop.jpg", category: "lamb" },
+  { image: "images/salmon.jpg", category: "drink" },
+  { image: "images/chicken-wings.jpg", category: "chicken" },
 ];
 console.log(picArr);
 let chiPic = [];
 
-for (let i = 0; i < picArr.length; i++) {
-  if (picArr[i] === "images/chicken.jpg") {
-    chiPic.push(picArr[i]);
+for (let elm of picArr) {
+  if (elm.category === "chicken") {
+    chiPic.push(elm);
     console.log(chiPic);
   }
 }
 
-// document.querySelector("#backPic").addEventListener("click", backImage);
+//with filter with exiting array
+let lamPic = picArr.filter((elm) => {
+  elm.category === "lamb";
+});
+console.log(lamPic);
+
+const chickenProducts = () => {
+  alert("hello");
+};
+
+document.querySelector("#chicken").addEventListener("click", chickenProducts);
